@@ -243,10 +243,11 @@ export default class DndManager {
 
         // throttle `dragHover` work to available animation frames
         cancelAnimationFrame(this.rafId);
+        const { path } = monitor.getItem();
         this.rafId = requestAnimationFrame(() => {
           this.dragHover({
             node: draggedNode,
-            path: monitor.getItem().path,
+            path,
             minimumTreeIndex: dropTargetProps.listIndex,
             depth: targetDepth,
           });

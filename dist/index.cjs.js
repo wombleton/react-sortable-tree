@@ -2354,10 +2354,14 @@ function () {
 
 
           cancelAnimationFrame(_this2.rafId);
+
+          var _monitor$getItem2 = monitor.getItem(),
+              path = _monitor$getItem2.path;
+
           _this2.rafId = requestAnimationFrame(function () {
             _this2.dragHover({
               node: draggedNode,
-              path: monitor.getItem().path,
+              path: path,
               minimumTreeIndex: dropTargetProps.listIndex,
               depth: targetDepth
             });
@@ -2385,10 +2389,10 @@ function () {
 
       var placeholderDropTarget = {
         drop: function drop(dropTargetProps, monitor) {
-          var _monitor$getItem2 = monitor.getItem(),
-              node = _monitor$getItem2.node,
-              path = _monitor$getItem2.path,
-              treeIndex = _monitor$getItem2.treeIndex;
+          var _monitor$getItem3 = monitor.getItem(),
+              node = _monitor$getItem3.node,
+              path = _monitor$getItem3.path,
+              treeIndex = _monitor$getItem3.treeIndex;
 
           var result = {
             node: node,
